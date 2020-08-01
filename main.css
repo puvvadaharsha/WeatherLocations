@@ -1,0 +1,82 @@
+:root{
+    --backgroundColor: #151a52;
+    --primaryColor: #fdfdfd;
+    --secondaryColor:#e43737;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: var(--backgroundColor);
+    color: white;
+}
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+#form{
+    text-align: center;
+    margin: 1rem 0.5rem;
+}
+h1{
+    text-align: center;
+}
+
+input{
+    border: none;
+    background: var(--backgroundColor);
+    border-bottom: solid 1px white;
+    font-size: larger;
+    color: white;
+}
+
+button{
+    background: var(--secondaryColor);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    margin-left: 1rem;
+}
+#form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 0.5rem;
+}
+.card{
+    background: white;
+    margin: 0.5rem;
+    box-shadow: 0 2px 2px -2px rgb(194, 194, 194);
+    height: 350px;
+    border-radius: 15px;
+    z-index: 0;
+    color: var(--backgroundColor);
+    padding: 1rem 0.5rem;
+}   
+
+/* Tablet */
+@media(max-width: 960px){
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Tablet */
+@media(max-width: 640px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
