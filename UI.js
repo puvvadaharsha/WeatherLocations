@@ -4,9 +4,9 @@ class UI{
         const status = document.querySelector('.statusMessage');
         status.textContent = message;
         status.classList.add(className);
+        this.clearInput()
         setTimeout(()=>{
             this.clearStatus();
-            this.clearInput()
         }, 3000);
     }
 

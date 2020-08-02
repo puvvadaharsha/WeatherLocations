@@ -1,8 +1,14 @@
 # WeatherLocations
- This is a simple app that uses OpenWeather's API to get weather in multiple locations.
+ This is a simple responsive app that uses OpenWeather's API to get weather in multiple locations.
+ App uses Fetch API to get weather data.
 
-### Languages Used:
-HTML, CSS, Javascript
+### Screenshots
+![Desktop Image](screenshots/desktop.png)
+This is how it looks on a desktop.
+![Mobile Image](screenshots/mobile.png)
+
+### Technologies Used:
+HTML, CSS, Javascript, Fetch API
 
 ### To run: 
 1. Get an API key by signing up on OpenWeather API: https://openweathermap.org/api
