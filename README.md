@@ -5,7 +5,11 @@
 ### Screenshots
 ![Desktop Image](screenshots/desktop.png)
 This is how it looks on a desktop.
+
+
 ![Mobile Image](screenshots/mobile.png)
+This is how it looks on a Mobile.
+
 
 ### Technologies Used:
 HTML, CSS, Javascript, Fetch API
