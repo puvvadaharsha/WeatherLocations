@@ -4,28 +4,33 @@ class WeatherHelper{
     }
     async getWeather(place){
         let url = '';
-        if(isFinite(place)){
-            // Zipcode given
-            url = `https://api.openweathermap.org/data/2.5/weather?zip=${place}&appid=${this.apiKey}&units=imperial`;
-            console.log(url);
-            try{
-                const response = await fetch(url);
-                const jsonData = await response.json(); 
-                console.log(jsonData);   
-            } catch(e){
-                console.log(e);
-            }
 
-        } else{
-            // place name given make call based on that
-            // api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
+        // Create API Call URL
+        if(isFinite(place)){
+            // zipcode given
+            url = `https://api.openweathermap.org/data/2.5/weather?zip=${place}&appid=${this.apiKey}&units=imperial`;
+        }else{
+            // place name given
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${this.apiKey}&units=imperial`;
         }
 
+        // API call to OpenWeatherAPI
+        try{
+            const response = await fetch(url);
+            const jsonData = await response.json(); 
+            
+            // If 404 Error
+            if(jsonData.hasOwnProperty('message') && jsonData.message === 'city not found'){
+                UI.displayStatus(`Invalid Location. Please try again.`,'failure');
+            } else{
+                // Successfully got data
+                UI.displayStatus(`${place} added.`,'success'); 
+                UI.createCard(jsonData); 
+            }
+        } catch(e){
+            // catch any internal errors
+            UI.displayStatus(`Fetch data failed.`,'failure');  
+            console.log(e); 
+        }
     }
 }
-
-
-/*
-// icons
-http://openweathermap.org/img/wn/10d@2x.png
-*/
