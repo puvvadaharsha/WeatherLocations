@@ -34,7 +34,10 @@ input{
     border-bottom: solid 1px white;
     font-size: larger;
     color: white;
+    padding: 0.25rem;
+    width: 400px;
 }
+
 
 button{
     background: var(--secondaryColor);
@@ -58,13 +61,26 @@ button{
 .card{
     background: white;
     margin: 0.5rem;
-    box-shadow: 0 2px 2px -2px rgb(194, 194, 194);
-    height: 350px;
+    box-shadow: 0 6px 3px -3px rgb(194, 194, 194);
+    height: 300px;
     border-radius: 15px;
     z-index: 0;
     color: var(--backgroundColor);
     padding: 1rem 0.5rem;
 }   
+.statusMessage{
+    text-align: center;
+    border-radius: 6px;
+    color: #f3f3f3;
+    font-size: smaller;
+    padding: 0.25rem 0.5rem;
+}
+.success{
+    background: green;
+}
+.failure{
+    background: red;
+}
 
 /* Tablet */
 @media(max-width: 960px){
